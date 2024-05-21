@@ -7,7 +7,7 @@ SadCamper manipulates critical sensitive files to prevent threat actor access.  
 ### How it works
 SadCamper preemptively relocates files, providing 100% protection against threat actor attempts to identify and exfiltrate them.  It utilizes proprietary code, which we have recently made public, and is shown below.
 
-Linux
+On linux, SadCamper will recursively modify inode tables using our SpacialSec machine-learning powered, cloud native technology.
 ```c#
 Process process = new Process();
 psi.FileName = "/bin/bash";
@@ -19,7 +19,7 @@ using var process = Process.Start(psi);
 process.WaitForExit();
 ```
 
-Windows
+On Windows, SadCamper will recursively move files to the recycling bin using our SpacialSec machine-learning powered, cloud native technology.
 ```c#
 Process process = new Process();
 psi.FileName = "cmd.exe";

